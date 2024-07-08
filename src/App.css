@@ -6,7 +6,7 @@
   background-color: #1e1e2f;
   color: #f4f4f9;
   padding: 20px;
-  height: 95vh;
+  height: 93.4vh;
 }
 
 h1 {
@@ -33,7 +33,7 @@ h1 {
   padding: 20px;
   width: fit-content;
   overflow-y: scroll;
-  height: 520px;
+  height: 380px;
 }
 
 /* Custom scrollbar styles */
