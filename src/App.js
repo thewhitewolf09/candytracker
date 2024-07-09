@@ -15,14 +15,12 @@ const generateInitialState = () => {
 
 const App = () => {
   const [trades, setTrades] = useState(() => {
-    // Load state from localStorage if available, otherwise use initial state
     const storedTrades = localStorage.getItem("trades");
     return storedTrades ? JSON.parse(storedTrades) : generateInitialState();
   });
   const [selectedTrade, setSelectedTrade] = useState({ rowIndex: null, colIndex: null });
 
   useEffect(() => {
-    // Save state to localStorage whenever trades state changes
     localStorage.setItem("trades", JSON.stringify(trades));
   }, [trades]);
 
@@ -75,6 +73,11 @@ const App = () => {
     return totalTrades === 0 ? 0 : ((wins / totalTrades) * 100).toFixed(2);
   };
 
+  const handleReset = () => {
+    localStorage.removeItem("trades");
+    setTrades(generateInitialState());
+  };
+
   return (
     <div className="App">
       <h1>Candy Tracker 🍭</h1>
@@ -120,6 +123,9 @@ const App = () => {
           <div className="percentage-container">
             <h2>Winning Percentage: {calculateWinningPercentage()}%</h2>
           </div>
+          <button className="reset-button" onClick={handleReset}>
+            Reset Data
+          </button>
         </div>
       </div>
     </div>
