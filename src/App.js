@@ -85,6 +85,7 @@ const App = () => {
         <div className="trades-container-num">
           {trades.map((row, rowIndex) => (
             <div key={rowIndex} className="trade-row">
+              <span className="row-number">{rowIndex + 1}</span>
               {row.map((trade, colIndex) => (
                 <div
                   key={colIndex}

@@ -61,6 +61,15 @@ h1 {
   margin-bottom: 5px;
 }
 
+.row-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #f4f4f9;
+}
+
 .trade-item {
   display: flex;
   align-items: center;
@@ -197,13 +206,6 @@ button.reset-button:hover {
 
   .trades-container-num {
     padding: 5px;
-  }
-
-  .trade-item {
-    margin: 1px;
-    width: 30px;
-    height: 30px;
-    padding: 8px;
   }
 
   button {
